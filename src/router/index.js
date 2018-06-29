@@ -6,6 +6,9 @@ import Home from '../components/Home';
 
 import Login from '../components/Login'
 import Register from '../components/Register'
+
+import NewArticle from '../components/AfterAuth/NewArticle'
+
 Vue.use(Router);
 
 export default new Router({
@@ -30,6 +33,11 @@ export default new Router({
             path:'/register',
             name:'register',
             component:Register
+        },
+        {
+            path:'article-edit',
+            name:'article-edit',
+            component:NewArticle
         }
     ]
     

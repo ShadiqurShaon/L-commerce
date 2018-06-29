@@ -2,7 +2,6 @@
 <div id="app">
 <appheader></appheader>
 <router-view></router-view>
-<button class="primary" @click="gatdata()"></button>
 <appfooter></appfooter>
 </div>
 </template>

@@ -5,9 +5,7 @@
         :to="{ name: 'home' }">
         conduit
       </router-link>
-      <!-- <ul v-if="!isAuthenticated" class="nav navbar-nav pull-xs-right"> -->
-      <ul  class="nav navbar-nav pull-xs-right">
-       
+      <ul v-if="!isAuthenticated" class="nav navbar-nav pull-xs-right">       
         <li class="nav-item">
           <router-link class="nav-link"
             active-class="active"
@@ -34,7 +32,7 @@
           </router-link>
         </li>
       </ul>
-      <!-- <ul v-else class="nav navbar-nav pull-xs-right">
+      <ul v-else class="nav navbar-nav pull-xs-right">
         <li class="nav-item">
           <router-link
             class="nav-link"
@@ -59,21 +57,35 @@
             <i class="ion-gear-a"></i>&nbsp;Settings
           </router-link>
         </li>
-        <li class="nav-item" v-if="currentUser.username">
+        <!-- <li class="nav-item" v-if="currentUser.username">
           <router-link class="nav-link"
             active-class="active"
             exact
             :to="{ name: 'profile', params: { username: currentUser.username } }">
             {{ currentUser.username }}
           </router-link>
+        </li> -->
+        <li class="nav-item">
+          <router-link class="nav-link"
+            active-class="active"
+            exact
+            :to="{ name: 'profile', }">
+           ShadiqurShaon
+          </router-link>
         </li>
-      </ul> -->
+      </ul>
     </div>
   </nav>
 </template>
 <script>
   // import { mapGetters } from 'vuex'
   export default {
+
+    data(){
+      return{
+        isAuthenticated:true
+      }
+    }
     // name: 'RwvHeader',
     // computed: {
     //   ...mapGetters([
