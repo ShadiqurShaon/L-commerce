@@ -9,6 +9,9 @@ import Register from '../components/Register'
 
 import NewArticle from '../components/AfterAuth/NewArticle'
 import Setting from '../components/AfterAuth/Setting'
+import Profile from '../components/AfterAuth/Profile.vue'
+
+
 
 // import { settings } from 'cluster';
 
@@ -46,6 +49,11 @@ export default new Router({
             path:'/settings',
             name:'settings',
             component:Setting
+        },
+        {
+            path:'/@:username',
+            name:'profile',
+            component:Profile
         }
     ]
     

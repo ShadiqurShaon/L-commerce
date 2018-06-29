@@ -57,22 +57,22 @@
             <i class="ion-gear-a"></i>&nbsp;Settings
           </router-link>
         </li>
-        <!-- <li class="nav-item" v-if="currentUser.username">
+        <li class="nav-item" v-if="currentUser.username">
           <router-link class="nav-link"
             active-class="active"
             exact
             :to="{ name: 'profile', params: { username: currentUser.username } }">
             {{ currentUser.username }}
           </router-link>
-        </li> -->
-        <li class="nav-item">
+        </li>
+        <!-- <li class="nav-item">
           <router-link class="nav-link"
             active-class="active"
             exact
             :to="{ name: 'profile', }">
            ShadiqurShaon
           </router-link>
-        </li>
+        </li> -->
       </ul>
     </div>
   </nav>
@@ -83,7 +83,10 @@
 
     data(){
       return{
-        isAuthenticated:true
+        isAuthenticated:true,
+        currentUser:{
+          username:'Shadiqur Shaon'
+        }
       }
     }
     // name: 'RwvHeader',
