@@ -8,6 +8,9 @@ import Login from '../components/Login'
 import Register from '../components/Register'
 
 import NewArticle from '../components/AfterAuth/NewArticle'
+import Setting from '../components/AfterAuth/Setting'
+
+// import { settings } from 'cluster';
 
 Vue.use(Router);
 
@@ -35,9 +38,14 @@ export default new Router({
             component:Register
         },
         {
-            path:'article-edit',
+            path:'/article-edit',
             name:'article-edit',
             component:NewArticle
+        },
+        {
+            path:'/settings',
+            name:'settings',
+            component:Setting
         }
     ]
     
