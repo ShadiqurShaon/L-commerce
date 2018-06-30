@@ -83,7 +83,7 @@
 
     data(){
       return{
-        isAuthenticated:true,
+        isAuthenticated:false,
         currentUser:{
           username:'Shadiqur Shaon'
         }
