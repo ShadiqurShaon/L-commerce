@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import ApiService from './common/api.service'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -11,7 +12,7 @@ import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
 // Vue.use(vueRouter);
-
+ApiService.init();
 
 // const router = new vueRouter({
 //   routes:Routes,

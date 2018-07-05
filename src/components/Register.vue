@@ -10,7 +10,7 @@
             </router-link>
           </p>
           <ul v-if="errors" class="error-messages">
-            <li v-for="(v, k) in errors" :key="k">{{k}} {{ v | error }}</li>
+            <li v-for="v in errors" >{{v}}</li>
           </ul>
           <form v-on:submit.prevent="onSubmit">
             <fieldset class="form-group">
@@ -33,7 +33,7 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-// import { REGISTER } from '@/store/actions.type'
+import { REGISTER } from '../store/actions.type'
 
 export default {
 //   name: 'RwvRegister',
@@ -45,16 +45,16 @@ export default {
     }
   },
   computed: {
-    // ...mapState({
-    //   errors: state => state.auth.errors
-    // })
+    ...mapState({
+      errors: state => state.auth.errors
+    })
   },
   methods: {
     onSubmit () {
       this.$store.dispatch(REGISTER, {
         email: this.email,
         password: this.password,
-        username: this.username
+        name: this.username
       })
         .then(() => this.$router.push({ name: 'home' }))
     }
