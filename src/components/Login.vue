@@ -11,9 +11,9 @@
           </p>
           <ul v-if="errors" class="error-messages">
             <li
-              v-for="(v, k) in errors"
-              :key="k">
-              {{k}} {{ v | error }}
+              v-for="v in errors"
+              >
+               {{ v }}
             </li>
           </ul>
           <form v-on:submit.prevent="onSubmit(email, password)">
@@ -42,27 +42,27 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-// import { LOGIN } from '@/store/actions.type'
+import { LOGIN } from '../store/actions.type'
 
 export default {
 //   name: 'RwvLogin',
   data () {
     return {
-      email: null,
-      password: null
+      email: '',
+      password: ''
     }
   },
   methods: {
     onSubmit (email, password) {
       this.$store
-        .dispatch(LOGIN, { email, password })
+        .dispatch(LOGIN, { email:this.email, password:this.password })
         .then(() => this.$router.push({ name: 'home' }))
     }
   },
   computed: {
-    // ...mapState({
-    //   errors: state => state.auth.errors
-    // })
+    ...mapState({
+      errors: state => state.auth.errors
+    })
   }
 }
 </script>

@@ -1,12 +1,14 @@
 import Apiservice from '../common/api.service';
 import Jwtservice from '../common/jwt.service';
 import { LOGIN, LOGOUT, REGISTER, UPDATE_USER, CHECK_AUTH } from './actions.type';
-import { PURGE_AUTH, SET_AUTH, SET_ERROR } from './mutations.type';
+import { PURGE_AUTH, SET_AUTH, SET_ERROR,SET_LOGIN_ERROR } from './mutations.type';
 
 
 
 const state = {
-    errors:[],
+    errors: [],
+    lohinError:null,
+    signerror: [],
     user: {},
     isAuthenticated: Jwtservice.getToken()
 }
@@ -26,14 +28,21 @@ const actions = {
     [LOGIN](context, credentials) {
 
         return new Promise((resolve) => {
-            Apiservice.post('/user/login', credentials)
+            Apiservice
+                .post('/user/login', credentials)
                 .then((value) => {
-                    context.commit(SET_AUTH, value.data)
-                    resolve(data)
-                })
-                .catch((response) => {
+                    
+                    if ('token' in value.data) {
+                        context.commit(SET_AUTH, value.data);
+                        resolve(value)
+                    } else {
+                        context.commit(SET_ERROR, value.data)
+                    }
 
-                    context.commit(SET_ERROR, response.data.error)
+                }).catch((response) => {
+
+                    console.log(response)
+
                 })
         })
     },
@@ -44,7 +53,7 @@ const actions = {
             Apiservice
                 .post('/user/register', credentials)
                 .then((value) => {
-                  
+
                     if ('token' in value.data) {
                         context.commit(SET_AUTH, value.data);
                         resolve(value)
@@ -87,18 +96,20 @@ const mutations = {
     },
     [SET_ERROR](state, error) {
         var temperror = error.error;
-        // console.log(temperror)
-
         var res = Object.keys(temperror)
-        // iterate over them and generate the array
-        .map(function(k) {
-          // generate the array element 
-          return temperror[k][0];
-        });
+           
+            .map(function (k) {
+                
+                return temperror[k][0];
+            });
 
         state.errors = res;
-       
-           },
+
+    },
+    [SET_LOGIN_ERROR](state,error){
+        console.log(error)
+        state.lohinError = error
+    },
     [PURGE_AUTH](state) {
         state.isAuthenticated = false
         state.user = {}
