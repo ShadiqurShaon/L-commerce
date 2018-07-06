@@ -57,44 +57,34 @@
             <i class="ion-gear-a"></i>&nbsp;Settings
           </router-link>
         </li>
-        <li class="nav-item" v-if="currentUser.username">
+        
+        
+        <li class="nav-item" v-if="currentUser.name">
           <router-link class="nav-link"
             active-class="active"
             exact
-            :to="{ name: 'profile', params: { username: currentUser.username } }">
-            {{ currentUser.username }}
+            :to="{ name: 'profile', params: { username: currentUser.name } }">
+            {{ currentUser.name }}
           </router-link>
         </li>
-        <!-- <li class="nav-item">
-          <router-link class="nav-link"
-            active-class="active"
-            exact
-            :to="{ name: 'profile', }">
-           ShadiqurShaon
-          </router-link>
-        </li> -->
       </ul>
     </div>
   </nav>
 </template>
 <script>
-  // import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex'
   export default {
 
     data(){
       return{
-        isAuthenticated:false,
-        currentUser:{
-          username:'Shadiqur Shaon'
-        }
+        
       }
+    },
+    computed: {
+      ...mapGetters([
+        'currentUser',
+        'isAuthenticated'
+      ])
     }
-    // name: 'RwvHeader',
-    // computed: {
-    //   ...mapGetters([
-    //     'currentUser',
-    //     'isAuthenticated'
-    //   ])
-    // }
   }
 </script>
