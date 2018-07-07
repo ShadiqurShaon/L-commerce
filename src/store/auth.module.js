@@ -5,10 +5,11 @@ import { PURGE_AUTH, SET_AUTH, SET_ERROR, SET_LOGIN_ERROR } from './mutations.ty
 
 
 
+
 const state = {
     errors: [],
     user: {},
-    isAuthenticated: Jwtservice.getToken()
+    isAuthenticated: !!Jwtservice.getToken()
 }
 
 const getters = {
@@ -27,7 +28,7 @@ const actions = {
 
         return new Promise((resolve) => {
             Apiservice
-                .post('/user/login',credentials)
+                .post('/user/login', credentials)
                 .then((value) => {
                     if ('token' in value.data) {
                         context.commit(SET_AUTH, value.data);
@@ -41,16 +42,19 @@ const actions = {
         })
     },
 
-    [LOGOUT] (context) {
+    [LOGOUT](context) {
         context.commit(PURGE_AUTH)
-      },
+    },
     [REGISTER](context, credentials) {
         return new Promise((resolve) => {
             Apiservice
                 .post('/user/register', credentials)
                 .then((value) => {
-                    if ('token' in value.data) {
+                    if ('token' in value.data) { 
+                        
                         context.commit(SET_AUTH, value.data);
+                        
+
                         resolve(value)
                     } else {
                         context.commit(SET_ERROR, value.data)
@@ -64,32 +68,40 @@ const actions = {
     },
     [CHECK_AUTH](context) {
         if (Jwtservice.getToken()) {
+           
             Apiservice.setHeader()
             Apiservice.get('/user')
                 .then((value) => {
-                    
                     var data = {
-                        user:value.data,
-                        token:Jwtservice.getToken()
+                        user: value.data,
+                        token: Jwtservice.getToken()
                     }
-                    
                     context.commit(SET_AUTH, data)
                 })
                 .catch((response) => {
                     console.log(response.data)
                     // context.commit(SET_ERROR, response.data.error)
                 })
-        } 
+        }
         else {
+           
             context.commit(PURGE_AUTH)
-            
+
         }
 
-    }
+    },
+    // [UPDATE_USER](context,credentials){
+    //     return new promises((resolve)=>{
+
+    //         Apiservice.put()
+    //     })
+
+    // }
 }
 const mutations = {
 
     [SET_AUTH](state, data) {
+
         state.isAuthenticated = true
         state.user = data.user
         state.errors = [];
@@ -109,6 +121,7 @@ const mutations = {
     },
 
     [PURGE_AUTH](state) {
+        
         state.isAuthenticated = false
         state.user = {}
         state.error = {}
