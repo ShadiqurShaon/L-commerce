@@ -8,27 +8,27 @@
             <fieldset>
               <fieldset class="form-group">
                 <input class="form-control" type="text"
-                  v-model="currentUser.image"
+                  v-model="updatedUser.image"
                   placeholder="URL of profile picture">
               </fieldset>
               <fieldset class="form-group">
                 <input class="form-control form-control-lg" type="text"
-                  v-model="currentUser.username"
+                  v-model="updatedUser.name"
                   placeholder="Your username">
               </fieldset>
               <fieldset class="form-group">
                 <textarea class="form-control form-control-lg" rows="8"
-                  v-model="currentUser.bio"
+                  v-model="updatedUser.bio"
                   placeholder="Short bio about you"></textarea>
               </fieldset>
               <fieldset class="form-group">
                 <input class="form-control form-control-lg" type="text"
-                  v-model="currentUser.email"
+                  v-model="updatedUser.email"
                   placeholder="Email">
               </fieldset>
               <fieldset class="form-group">
                 <input class="form-control form-control-lg" type="password"
-                  v-model="currentUser.password"
+                  v-model="updatedUser.password"
                   placeholder="Password">
               </fieldset>
               <button class="btn btn-lg btn-primary pull-xs-right">
@@ -47,31 +47,25 @@
   </div>
 </template>
 <script>
-//   import { mapGetters } from 'vuex'
+  import { mapGetters,mapActions } from 'vuex'
   import { LOGOUT, UPDATE_USER } from '../../store/actions.type'
 
   export default {
     // name: 'RwvSettings',
     data(){
         return{
-            currentUser:{
-                image:'',
-                username:'',
-                bio:'',
-                email:'',
-                password:''
-
-            }
+          
         }
     },
     computed: {
-    //   ...mapGetters([
-    //     'currentUser'
-    //   ])
+      ...mapGetters([
+        'updatedUser'
+      ])
+     
     },
     methods: {
       updateSettings () {
-        this.$store.dispatch(UPDATE_USER, this.currentUser)
+        this.$store.dispatch(UPDATE_USER, this.updatedUser)
           .then(() => {
             // #todo, nice toast and no redirect
             this.$router.push({ name: 'home' })
