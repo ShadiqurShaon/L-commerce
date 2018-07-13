@@ -26,17 +26,21 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="../assets/screenshot-www.comparemymobile.com-2018.07.09-13-03-33.png" alt="Los Angeles" style="width:100%;">
+        <router-link  :to="{name: 'home'}" > 
+        <img src="../assets/0081286.jpg" alt="Los Angeles" style="width:100%;">
+        </router-link>
       </div>
 
       <div class="item">
-        <img src="../assets/screenshot-www.dxomark.com-2018.07.09-13-04-03.png" alt="Los Angeles" style="width:100%;">
-        
+        <router-link  :to="{name: 'home'}" > 
+        <img src="../assets/0081287.jpg" alt="Los Angeles" style="width:100%;">
+         </router-link>
       </div>
     
       <div class="item">
-        <img src="../assets/screenshot-www.eventsclothing.co.nz-2018.07.09-12-59-33.png" alt="Los Angeles" style="width:100%;">
-        
+        <router-link  :to="{name: 'home'}" > 
+        <img src="../assets/0084030.jpg" alt="Los Angeles" style="width:100%;">
+         </router-link>
       </div>
     </div>
 

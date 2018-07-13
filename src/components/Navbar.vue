@@ -10,7 +10,7 @@
           <router-link class="nav-link"
             active-class="active"
             exact
-            :to="{ name: 'settings' }">
+            :to="{ name: 'Western' }">
             <div>
               <img src="../assets/western_wear-min.png" alt="Western"><p class="ptext">Western</p>
              
@@ -22,7 +22,7 @@
           <router-link class="nav-link"
             active-class="active"
             exact
-            :to="{ name: 'settings' }">
+            :to="{ name: 'Watches' }">
             <div>
               <img src="../assets/Watches.png" alt="Watches"><p class="ptext">Watches</p>
              
@@ -34,7 +34,7 @@
           <router-link class="nav-link"
             active-class="active"
             exact
-            :to="{ name: 'settings' }">
+            :to="{ name: 'Tshirt' }">
             <div>
               <img src="../assets/T SHIRT.png" alt="Tshart"><p class="ptext">T-shirt</p>
                 
@@ -46,7 +46,7 @@
           <router-link class="nav-link"
             active-class="active"
             exact
-            :to="{ name: 'settings' }">
+            :to="{ name: 'Tops' }">
             <div>
               <img src="../assets/tops.png" alt="Tops"><p class="ptext">Tops</p>
             
@@ -58,7 +58,7 @@
           <router-link class="nav-link"
             active-class="active"
             exact
-            :to="{ name: 'settings' }">
+            :to="{ name: 'Footwear' }">
             <div>
               <img src="../assets/Stilettoes_n_Heels_01.png" alt="Footwear"><p class="ptext">Footwear</p>
             </div>
@@ -69,7 +69,7 @@
           <router-link class="nav-link"
             active-class="active"
             exact
-            :to="{ name: 'settings' }">
+            :to="{ name: 'Kurtis' }">
             <div>
              <img src="../assets/kurta_kurti.png" alt="Kurtis"><p class="ptext">Kurtis</p>
             </div>
@@ -80,7 +80,7 @@
           <router-link class="nav-link"
             active-class="active"
             exact
-            :to="{ name: 'settings' }">
+            :to="{ name: 'Bags' }">
             <div>
              <img src="../assets/bags-min.png" alt="Bags"><p class="ptext">Bags</p>
             </div>
@@ -91,7 +91,7 @@
           <router-link class="nav-link"
             active-class="active"
             exact
-            :to="{ name: 'settings' }">
+            :to="{ name: 'Sarres' }">
             <div >
              <img src="../assets/sarees.png" alt="Sarres"><p class="ptext">Sarres</p>
             </div>
