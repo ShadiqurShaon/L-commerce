@@ -10,9 +10,7 @@
             </router-link>
           </p>
           <ul v-if="errors" class="error-messages">
-            <li
-              v-for="v in errors"
-              >
+            <li v-for="v in errors">
                {{ v }}
             </li>
           </ul>

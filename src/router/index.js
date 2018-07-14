@@ -122,7 +122,13 @@ export default new Router({
             path: '/Sarres',
             name: 'Sarres',
             component: Sarres
-        }
+        },
+       {
+        name: 'product',
+        path: '/product/:slug',
+        component: Sarres,
+        props: true
+       }
 
     ]
 

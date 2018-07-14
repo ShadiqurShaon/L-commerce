@@ -97,7 +97,34 @@
             </ul>
           </div>
           <router-view></router-view>
+
+          <!-- <div class="container">
+          <div class="row">
+          <div class="col-sm-4" style="border:2px solid;word-wrap: break-word;" v-for="product in Products">
+            
+            <h3>{{product.name}}</h3>
+            <div style="height: 150px;width: 287px;">
+            <p>{{product.imgUrl}}</p>
+            </div>
+            <h1>{{product.price}}</h1>
+            </div>
+
+          </div>
+          </div> -->
+        <div class="container">
+          <div class="row">
+
+          <product-preview 
+          v-for="(product,index) in Products"
+            :product="product"
+            :key="product.name.replace(/\s/g,'')+index">
+          </product-preview>
+           </div>
+           </div> 
+          </div>
+          <h1>this is a message</h1>
         </div>
+        
         <div class="col-md-3">
           <div class="sidebar">
             <p>Popular Tags</p>
@@ -112,47 +139,81 @@
         </div>
       </div>
     </div>
-  </div>
+
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
-  import Vue from 'vue'
-  import VueAgile from 'vue-agile'
+import { mapGetters } from "vuex";
+import Vue from "vue";
+import VueAgile from "vue-agile";
+import ProductPreview from "./AfterAuth/ProductPreview";
 
-      Vue.use(VueAgile)
-  // import RwvTag from '@/components/VTag'
-  // import { FETCH_TAGS } from '@/store/actions.type'
+Vue.use(VueAgile);
+// import RwvTag from '@/components/VTag'
+// import { FETCH_TAGS } from '@/store/actions.type'
 
-  export default {
-    name: 'home',
-    components: {
-      // RwvTag
-    },
-    mounted () {
-      // this.$store.dispatch(FETCH_TAGS)
-     $('.carousel').carousel({
-  interval: 3000
-})
-    },
-    // computed: {
-    //   ...mapGetters([
-    //     'isAuthenticated',
-    //     'tags'
-    //   ]),
-    //   tag () {
-    //     return this.$route.params.tag
-    //   }
-    // }
+export default {
+  name: "home",
+  data() {
+    return {
+      Products: [
+        {
+          imgUrl:"0081286.jpg",
+          name: "CHECK PRINT SHIRT",
+          price: 110
+        },
+        {
+          imgUrl:"0081286.jpg",
+          name: "GLORIA HIGH LOGO SNEAKER",
+          price: 91
+        },
+        {
+          imgUrl:
+            "0081286.jpg",
+          name: "CATE RIGID BAG",
+          price: 94.5
+        },
+        {
+          imgUrl:
+            "0081286.jpg",
+          name: "GUESS CONNECT WATCH",
+          price: 438.9
+        },
+        {
+          imgUrl:
+            "0081286.jpg",
+          name: "'70s RETRO GLAM KEFIAH",
+          price: 20
+        }
+      ]
+    };
+  },
+  components: {
+    ProductPreview: ProductPreview
+  },
+  mounted() {
+    // this.$store.dispatch(FETCH_TAGS)
+    $(".carousel").carousel({
+      interval: 3000
+    });
   }
+  // computed: {
+  //   ...mapGetters([
+  //     'isAuthenticated',
+  //     'tags'
+  //   ]),
+  //   tag () {
+  //     return this.$route.params.tag
+  //   }
+  // }
+};
 </script>
 
 <style scoped>
- .carousel-inner > .item > img{
- 
-   height: 400px;
- }
-  /* .carousel-inner > .item > a > img {
+.carousel-inner > .item > img {
+  height: 400px;
+}
+/* .carousel-inner > .item > a > img {
       width: 70%;
       margin: auto;
   } */
