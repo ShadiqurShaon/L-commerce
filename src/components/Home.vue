@@ -145,10 +145,10 @@
 <script>
 import { mapGetters } from "vuex";
 import Vue from "vue";
-import VueAgile from "vue-agile";
+// import VueAgile from "vue-agile";
 import ProductPreview from "./AfterAuth/ProductPreview";
 
-Vue.use(VueAgile);
+// Vue.use(VueAgile);
 // import RwvTag from '@/components/VTag'
 // import { FETCH_TAGS } from '@/store/actions.type'
 
@@ -158,29 +158,29 @@ export default {
     return {
       Products: [
         {
-          imgUrl:"0081286.jpg",
+          image:"0081286.jpg",
           name: "CHECK PRINT SHIRT",
           price: 110
         },
         {
-          imgUrl:"0081286.jpg",
+          image:"0081286.jpg",
           name: "GLORIA HIGH LOGO SNEAKER",
           price: 91
         },
         {
-          imgUrl:
+          image:
             "0081286.jpg",
           name: "CATE RIGID BAG",
           price: 94.5
         },
         {
-          imgUrl:
+          image:
             "0081286.jpg",
           name: "GUESS CONNECT WATCH",
           price: 438.9
         },
         {
-          imgUrl:
+          image:
             "0081286.jpg",
           name: "'70s RETRO GLAM KEFIAH",
           price: 20

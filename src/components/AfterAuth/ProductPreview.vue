@@ -3,7 +3,9 @@
           
             <div class="productIteam">
                 <div class="picture" >
-                  <img :src="require(`../../assets/${product.imgUrl}`)" alt="">
+                  <!-- <img :src="require(`../../assets/${product.image}`)" alt="img not found"> -->
+
+                 <img :src="`static/photos/${product.image}`" alt="" />
                 </div>
                 <div class="details">
                   <h2 class="product-title"> {{product.name}}</h2>
@@ -49,8 +51,11 @@ export default {
   word-wrap: break-word;
   height: 350px;
 }
-
-.productIteam img{
+.picture{
+width:100%;
+height:200px;
+}
+.picture img{
 
 width:100%;
 height:200px;
@@ -86,7 +91,10 @@ height:200px;
 .preview{
  text-decoration: none!important; 
 }
-
+.buttons-lower{
+  margin: 0px;
+  border: 0px;
+}
 .buttons-lower .buttons-bilow{
     display: block;
     color:grey;
