@@ -23,6 +23,7 @@ import Footwear from '../components/views/Footwear'
 import Kurtis from '../components/views/Kurtis'
 import Bags from '../components/views/Bags'
 import Sarres from '../components/views/Sarres'
+import productView from '../components/views/ProductView'
 // import { settings } from 'cluster';
 
 Vue.use(Router);
@@ -124,9 +125,9 @@ export default new Router({
             component: Sarres
         },
        {
-        name: 'product',
-        path: '/product/:slug',
-        component: Sarres,
+        name: 'product-view',
+        path: '/product-view/:slug',
+        component: productView,
         props: true
        }
 

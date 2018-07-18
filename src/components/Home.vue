@@ -157,29 +157,29 @@ export default {
   data() {
     return {
       Products: [
-        {
+        { id:3,
           image:"0081286.jpg",
           name: "CHECK PRINT SHIRT",
           price: 110
         },
-        {
+        {id:2,
           image:"0081286.jpg",
           name: "GLORIA HIGH LOGO SNEAKER",
           price: 91
         },
-        {
+        {id:1,
           image:
             "0081286.jpg",
           name: "CATE RIGID BAG",
           price: 94.5
         },
-        {
+        {id:4,
           image:
             "0081286.jpg",
           name: "GUESS CONNECT WATCH",
           price: 438.9
         },
-        {
+        {id:6,
           image:
             "0081286.jpg",
           name: "'70s RETRO GLAM KEFIAH",

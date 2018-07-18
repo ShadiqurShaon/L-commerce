@@ -1,10 +1,9 @@
 <template>   
-<router-link :to="{name: 'product', params: {'slug': this.$vnode.key}}" class="col-sm-4 preview" >     
+<router-link :to="{name: 'product-view', params: {'slug': this.$vnode.key,'id':product.id}}" class="col-sm-4 preview" >     
           
             <div class="productIteam">
                 <div class="picture" >
                   <!-- <img :src="require(`../../assets/${product.image}`)" alt="img not found"> -->
-
                  <img :src="`static/photos/${product.image}`" alt="" />
                 </div>
                 <div class="details">
