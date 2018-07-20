@@ -1,10 +1,10 @@
 <template>   
-<router-link :to="{name: 'product-view', params: {'slug': this.$vnode.key,'id':product.id}}" class="col-sm-4 preview" >     
+<router-link :to="{name: 'product-view', params: {'slug': this.$vnode.key}}" @click.native="getProduct(product.id)" class="col-sm-4 preview" >     
           
             <div class="productIteam">
                 <div class="picture" >
                   <!-- <img :src="require(`../../assets/${product.image}`)" alt="img not found"> -->
-                 <img :src="`static/photos/${product.image}`" alt="" />
+                 <img :src="`/static/photos/${product.image}`" alt="" />
                 </div>
                 <div class="details">
                   <h2 class="product-title"> {{product.name}}</h2>
@@ -27,6 +27,7 @@
             </router-link>
    </template>
 <script>
+import { GET_PRODUCT_BY_ID } from "../../store/actions.type";
 export default {
   props: {
     product: {
@@ -36,6 +37,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods:{
+    getProduct:function(id){
+      this.$store.dispatch(GET_PRODUCT_BY_ID,id);
+    }
   }
 };
 </script>
@@ -53,6 +59,7 @@ export default {
 .picture{
 width:100%;
 height:200px;
+
 }
 .picture img{
 
