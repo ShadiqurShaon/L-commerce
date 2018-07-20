@@ -17,7 +17,7 @@
       <td>{{product.price}}</td>
       <td><button type="button" class="btn btn-primary">+</button> <button type="button" class="btn btn-danger">-</button>
       </td>
-      <td><button type="button" class="btn btn-warning">Remove</button></td>
+      <td><button @click="removeProduct(product)" type="button" class="btn btn-warning">Remove</button></td>
     </tr>
   </tbody>
 </table>
@@ -26,17 +26,20 @@
 </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
-    export default{
-            data(){
-                return{
+import { mapGetters } from "vuex";
+import { REMOVE_PRODUCT } from "../../store/actions.type";
 
-                }
-            },
-            computed:{
-                ...mapGetters([
-                    'getCart'
-                ])
-            }
+export default {
+  computed: {
+    ...mapGetters(["getCart"])
+  },
+  data() {
+    return {};
+  },
+  methods: {
+    removeProduct:function(data) {
+      return this.$store.dispatch(REMOVE_PRODUCT, data);
     }
+  }
+};
 </script>
