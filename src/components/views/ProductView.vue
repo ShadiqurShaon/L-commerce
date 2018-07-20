@@ -10,7 +10,7 @@
          <div class="relative" >
           <div v-for="(image,index) in productById.product_photo_and_review"
              :key="index"
-             @mouseover="mouseOver(image.photos)"
+             @mouseover="mouseOver(image.photos,productById)"
             
               class="otherpic" style="border: 1px solid #ddd;">
                 <img   :src="`/static/photos/${image.photos}`" alt="" style="background-color:blue" />
@@ -46,6 +46,7 @@
     
      </div>
   </div>    
+ 
        
    
   
@@ -66,21 +67,27 @@ export default {
     }
    
   },
+    computed: {
+      // ...mapGetters({
+      //  productById:"productById"
+      // })
+      productById () {
+    return this.$store.getters.productById
+  }
+    },
   data() {
     return {
-      
+    
     };
   },
   mounted() {
     // this.$store.dispatch(GET_PRODUCT_BY_ID,this.productId);
   },
-  computed: {
-    ...mapGetters(["productById"])
-  },
   methods:{
-    mouseOver:(img)=>{
-
-      alert(this.productById)
+    mouseOver:(img,product)=>{
+        
+      // this.$store.productById.image = img;
+      product.image = img
       
       
     }

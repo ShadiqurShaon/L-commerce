@@ -5,7 +5,7 @@ import{SET_SARRES,SET_PRODUCT_BY_ID} from './mutations.type'
 
 const state = {
    sarres:[],
-   productById:[]
+   productById:{}
 }
 
 const getters = {
