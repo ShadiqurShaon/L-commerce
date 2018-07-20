@@ -30,7 +30,7 @@
                 <p>Discount For You:{{productById.discount}} </p>
               </div>
               <div class="cart">
-                <button class="primary">Cart it now</button>
+                <button class="primary" @click="addToCArt({id:productById.id,name:productById.name,price:productById.price,image:productById.image})">Cart it now</button>
               </div>
               <div class="phoneContact" style="margin:auto;width:100%">
                   For Order by phone please contact :01111222
@@ -58,7 +58,8 @@
 <script>
 import { mapGetters } from "vuex";
 
-import { GET_PRODUCT_BY_ID } from "../../store/actions.type";
+import { GET_PRODUCT_BY_ID,ADD_TO_CART } from "../../store/actions.type";
+
 export default {
   props: {
     slug: {
@@ -80,16 +81,15 @@ export default {
     
     };
   },
-  mounted() {
-    // this.$store.dispatch(GET_PRODUCT_BY_ID,this.productId);
-  },
   methods:{
     mouseOver:(img,product)=>{
-        
-      // this.$store.productById.image = img;
+  
       product.image = img
       
-      
+    },
+    addToCArt:function(product){
+
+     return  this.$store.dispatch(ADD_TO_CART,product);
     }
   }
 };

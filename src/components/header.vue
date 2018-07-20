@@ -45,8 +45,8 @@
         <li class="nav-item">
           <router-link class="nav-link"
             active-class="active"
-            :to="{ name: 'article-edit' }">
-            <i class="ion-compose"></i>&nbsp;New Article
+            :to="{ name: 'cart' }">
+            <i class="ion-compose"></i>&nbsp;[{{totalProduct}}]Cart {{getTotal}}
           </router-link>
         </li>
         <li class="nav-item">
@@ -83,7 +83,9 @@
     computed: {
       ...mapGetters([
         'currentUser',
-        'isAuthenticated'
+        'isAuthenticated',
+        'totalProduct',
+        'getTotal'
       ])
     }
   }

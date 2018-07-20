@@ -24,6 +24,7 @@ import Kurtis from '../components/views/Kurtis'
 import Bags from '../components/views/Bags'
 import Sarres from '../components/views/Sarres'
 import productView from '../components/views/ProductView'
+import cart from '../components/views/Cart'
 // import { settings } from 'cluster';
 
 Vue.use(Router);
@@ -129,6 +130,11 @@ export default new Router({
         path: '/product-view/:slug',
         component: productView,
         props: true
+       },
+       {
+           name:'cart',
+           path:'/cart',
+           component:cart
        }
 
     ]
