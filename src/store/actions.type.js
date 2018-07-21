@@ -10,3 +10,4 @@ export const ADD_TO_CART  = 'addToCart'
 export const REMOVE_PRODUCT = 'removeProduct'
 export const ADD_QUANT = 'addQuant'
 export const REMOVE_QUANT = 'removeQuant'
+

@@ -25,8 +25,9 @@ import{SARRES} from '../../store/actions.type'
     },
     computed: {
       ...mapGetters([
-        'getSarres'
-      ])
+        'getSarres',
+      ]),
+  
     }
       
   }

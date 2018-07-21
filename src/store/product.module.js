@@ -36,6 +36,7 @@ const actions = {
         return new Promise((resolve)=>{
             Apiservice.get('productByID',pram)
             .then((value)=>{
+                
                 context.commit(SET_PRODUCT_BY_ID,value.data)                
             }).catch((response)=>{
                 console.log(response)
@@ -51,6 +52,7 @@ const mutations = {
         state.sarres = data;
     },
     [SET_PRODUCT_BY_ID](state ,data){
+    
         state.productById = data;
     }
 

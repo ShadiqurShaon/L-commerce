@@ -1,5 +1,9 @@
 import{ADD_TO_CART,REMOVE_PRODUCT,ADD_QUANT,REMOVE_QUANT} from './actions.type'
-import{SET_PRODUCT_TO_CART,REMOVE_PRODUCT_CART,SET_QUANT,SET_REMOVE_QUANT} from './mutations.type'
+import{SET_PRODUCT_TO_CART,
+    REMOVE_PRODUCT_CART,
+    SET_QUANT,
+    SET_REMOVE_QUANT,
+    CHECK_PRODUCT_ON_CART} from './mutations.type'
 
 const state ={
     products: {
@@ -44,6 +48,7 @@ const actions ={
 }
 const mutations = {
     [SET_PRODUCT_TO_CART](state,data){
+        
        state.total = parseInt(state.total)+parseInt(data.price);
         state.cart.push(data);
     },
@@ -76,6 +81,7 @@ const mutations = {
             return obj;
         })
     }
+   
 }
 
 export default{
