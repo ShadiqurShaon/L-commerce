@@ -142,6 +142,7 @@ const mutations = {
         state.error = {}
         state.updateUserProfile = {}
         Jwtservice.destroyToken()
+       console.log(localStorage.clear())
     }
 
 }

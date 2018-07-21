@@ -15,7 +15,7 @@
       <th><img :src="`/static/photos/${product.image}`" alt="" style="height:45px;width:45px;" /></th>
       <td>{{product.name}}</td>
       <td>{{product.price}}</td>
-      <td><button type="button" class="btn btn-primary">+</button> <button type="button" class="btn btn-danger">-</button>
+      <td>{{product.quant}}  <button style="margin:5px;margin-left:10px" @click="addQuant(product.id)" type="button" class="btn btn-primary">+</button> <button @click="removeQuant(product)" type="button" class="btn btn-danger" v-bind:disabled="product.quant>1 ? false:true">-</button>
       </td>
       <td><button @click="removeProduct(product)" type="button" class="btn btn-warning">Remove</button></td>
     </tr>
@@ -27,7 +27,7 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
-import { REMOVE_PRODUCT } from "../../store/actions.type";
+import { REMOVE_PRODUCT,ADD_QUANT,REMOVE_QUANT } from "../../store/actions.type";
 
 export default {
   computed: {
@@ -39,7 +39,16 @@ export default {
   methods: {
     removeProduct:function(data) {
       return this.$store.dispatch(REMOVE_PRODUCT, data);
+    },
+  addQuant:function(id){
+    return this.$store.dispatch(ADD_QUANT,id)
+  },
+  removeQuant:function(product){
+    if(product.quant>1){
+
+      return this.$store.dispatch(REMOVE_QUANT,product.id)
     }
+  }
   }
 };
 </script>

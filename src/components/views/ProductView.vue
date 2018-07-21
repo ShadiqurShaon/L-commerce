@@ -30,7 +30,7 @@
                 <p>Discount For You:{{productById.discount}} </p>
               </div>
               <div class="cart">
-                <button class="primary" @click="addToCArt({id:productById.id,name:productById.name,price:productById.price,image:productById.image})">Cart it now</button>
+                <button class="primary" @click="addToCArt({id:productById.id,name:productById.name,price:productById.price,image:productById.image,quant:1})">Cart it now</button>
               </div>
               <div class="phoneContact" style="margin:auto;width:100%">
                   For Order by phone please contact :01111222
