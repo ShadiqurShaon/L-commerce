@@ -25,8 +25,11 @@ import Bags from '../components/views/Bags'
 import Sarres from '../components/views/Sarres'
 import productView from '../components/views/ProductView'
 import cart from '../components/views/Cart'
+import shopingDetails from '../components/views/ShopingDetails'
 // import { settings } from 'cluster';
 
+import {  CHECK_AUTH } from '../store/actions.type';
+import store from '../store'
 Vue.use(Router);
 
 export default new Router({
@@ -134,8 +137,25 @@ export default new Router({
        {
            name:'cart',
            path:'/cart',
-           component:cart
-       }
+           component:cart,
+           children:[
+            {
+                name:'continue-shopping',
+                path:'/continue-shopping',
+                component:shopingDetails,
+                beforeEnter:function(to, from, next){
+                    if(store.getters.isAuthenticated){
+                        next();
+                    }else{
+
+                        next({path:'/register'})
+                    }
+                }
+            }
+           ]
+       },
+       
+
 
     ]
 

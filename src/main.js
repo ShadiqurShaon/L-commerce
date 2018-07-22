@@ -16,13 +16,13 @@ Vue.use(VueAxios, axios)
 // Vue.use(vueRouter);
 ApiService.init();
 
-router.beforeEach(
-  (to, from, next) => {
-    return Promise
-      .all([store.dispatch(CHECK_AUTH)])
-      .then(next)
-  }
-)
+// router.beforeEach(
+//   (to, from, next) => {
+//     return Promise
+//       .all([store.dispatch(CHECK_AUTH)])
+//       .then(next)
+//   }
+// )
 // const router = new vueRouter({
 //   routes:Routes,
 //   mode:'history'

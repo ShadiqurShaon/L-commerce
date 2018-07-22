@@ -18,7 +18,9 @@ const state ={
 }
 const getters = {
     getCart(state){
+        
         return state.cart;
+
     },
     getTotal(state){
         return state.total

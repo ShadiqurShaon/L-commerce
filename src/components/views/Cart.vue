@@ -21,8 +21,31 @@
     </tr>
   </tbody>
 </table>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+     <router-link
+                  :to="{name: 'home'}"
+                  exact
+                  class="btn btn-primary"
+                  active-class="active">
+                  Continue Shoping
+                </router-link>
+    </div>
+    <div class="col-sm-6">
+     <router-link
+                  :to="{name: 'continue-shopping'}"
+                  exact
+                  class="btn btn-success"
+                  active-class="active">
+                  Continue
+                </router-link>
+    </div>
+    </div>
+</div>
 
-   {{getCart}}
+<router-view></router-view>
+  
 </div>
 </template>
 <script>
