@@ -40,22 +40,32 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex'
-import { LOGIN } from '../store/actions.type'
+import { mapState } from "vuex";
+import { LOGIN } from "../store/actions.type";
 
 export default {
-//   name: 'RwvLogin',
-  data () {
+  //   name: 'RwvLogin',
+  data() {
     return {
-      email: '',
-      password: ''
-    }
+      email: "",
+      password: ""
+    };
   },
   methods: {
-    onSubmit (email, password) {
+    onSubmit(email, password) {
       this.$store
-        .dispatch(LOGIN, { email:this.email, password:this.password })
-        .then(() => this.$router.push({ name: 'home' }))
+        .dispatch(LOGIN, { email: this.email, password: this.password })
+        // .then(() => this.$router.push({ name: 'home' }))
+        .then(() => {
+          if (this.$router.currentRoute.fullPath === "/login") {
+            this.$router.push({ name: "home" });
+          } else {
+            this.$router.push({
+              name: this.$router.currentRoute.query.redirect
+            });
+          }
+        });
+      console.log(this.$router.currentRoute);
     }
   },
   computed: {
@@ -63,5 +73,5 @@ export default {
       errors: state => state.auth.errors
     })
   }
-}
+};
 </script>

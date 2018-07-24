@@ -140,7 +140,7 @@ export default new Router({
            component:cart,
            children:[
             {
-                name:'continue-shopping',
+                name:'/continue-shopping',
                 path:'/continue-shopping',
                 component:shopingDetails,
                 beforeEnter:function(to, from, next){
@@ -148,7 +148,12 @@ export default new Router({
                         next();
                     }else{
 
-                        next({path:'/register'})
+                        next({
+                        path:'/login',
+                        query: {
+                            redirect: to.fullPath,
+                          },})
+                        
                     }
                 }
             }

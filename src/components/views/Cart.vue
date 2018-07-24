@@ -34,7 +34,7 @@
     </div>
     <div class="col-sm-6">
      <router-link
-                  :to="{name: 'continue-shopping'}"
+                  :to="{name: '/continue-shopping'}"
                   exact
                   class="btn btn-success"
                   active-class="active">

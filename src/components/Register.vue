@@ -10,7 +10,7 @@
             </router-link>
           </p>
           <ul v-if="errors" class="error-messages">
-            <li v-for="v in errors" >{{v}}</li>
+            <li v-for="(v,index) in errors" :key="index" >{{v}}</li>
           </ul>
           <form v-on:submit.prevent="onSubmit">
             <fieldset class="form-group">
@@ -57,6 +57,7 @@ export default {
         name: this.username
       })
         .then(() => this.$router.push({ name: 'home' }))
+        // .then(() => this.$router.currentRoute)
     }
   }
 }
