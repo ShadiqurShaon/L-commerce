@@ -56,7 +56,16 @@ export default {
         password: this.password,
         name: this.username
       })
-        .then(() => this.$router.push({ name: 'home' }))
+        .then(() => {
+          if (this.$router.currentRoute.fullPath === "/register") {
+            this.$router.push({ name: "home" });
+          } else {
+            this.$router.push({
+              name: this.$router.currentRoute.query.redirect
+            });
+          }
+          console.log(this.$router.currentRoute);
+        })
         // .then(() => this.$router.currentRoute)
     }
   }

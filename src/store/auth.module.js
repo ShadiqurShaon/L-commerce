@@ -36,6 +36,7 @@ const actions = {
                 .post('/user/login', credentials)
                 .then((value) => {
                     if ('token' in value.data) {
+                        
                         context.commit(SET_AUTH, value.data);
                         context.commit(SET_UPDATE_USER, value.data.user);
                         resolve(value)
@@ -58,6 +59,7 @@ const actions = {
                 .then((value) => {
                     if ('token' in value.data) { 
                         
+                       
                         context.commit(SET_AUTH, value.data);
                         context.commit(SET_UPDATE_USER, value.data.user);
 

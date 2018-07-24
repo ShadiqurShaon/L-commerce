@@ -65,7 +65,7 @@ export default {
             });
           }
         });
-      console.log(this.$router.currentRoute);
+      // console.log(this.$router.currentRoute);
     }
   },
   computed: {
