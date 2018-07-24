@@ -3,7 +3,7 @@
     <div class="container">
       <router-link class="navbar-brand"
         :to="{ name: 'home' }">
-        conduit
+        WE-SHE
       </router-link>
       <ul v-if="!isAuthenticated" class="nav navbar-nav pull-xs-right">       
         <!-- <li class="nav-item">

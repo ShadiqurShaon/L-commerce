@@ -143,6 +143,7 @@ export default new Router({
                 name:'/continue-shopping',
                 path:'/continue-shopping',
                 component:shopingDetails,
+                props:true,
                 beforeEnter:function(to, from, next){
                     if(store.getters.isAuthenticated){
                         next();

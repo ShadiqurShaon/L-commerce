@@ -21,7 +21,10 @@
     </tr>
   </tbody>
 </table>
-<div class="container">
+<div class="container" v-if="show===false" style=" text-align:center;color:red">
+  <h1>Your cart is empty</h1>
+</div>
+<div class="container" v-if="getCart.length < 1?show=false:show=true" v-show="show">
     <div class="row">
       <div class="col-sm-6">
      <router-link
@@ -34,7 +37,7 @@
     </div>
     <div class="col-sm-6">
      <router-link
-                  :to="{name: '/continue-shopping'}"
+                  :to="{name: '/continue-shopping',params:{cart: getCart}}" 
                   exact
                   class="btn btn-success"
                   active-class="active">
@@ -42,9 +45,10 @@
                 </router-link>
     </div>
     </div>
+    <router-view></router-view>
 </div>
 
-<router-view></router-view>
+
   
 </div>
 </template>
@@ -55,9 +59,12 @@ import { REMOVE_PRODUCT,ADD_QUANT,REMOVE_QUANT } from "../../store/actions.type"
 export default {
   computed: {
     ...mapGetters(["getCart"])
+
   },
   data() {
-    return {};
+    return {
+      show:true
+    };
   },
   methods: {
     removeProduct:function(data) {
