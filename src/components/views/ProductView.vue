@@ -1,87 +1,75 @@
 <template>
-
-
-
-  <div class="container" style="text-align:center">
-  
-    <h3>Product Deatails of :{{productById.name}}</h3>
-
-
-   <div class="row" style="margin-top:30px">
-
-      <div class="col l6 s12">
-
-        <div  >
-            <img :src="`/static/photos/${productById.image}`" alt="" style="background-color:blue" />
-         </div>
-
-      </div>
-      <div class="col l6 s12">
-        <div v-for="(image,index) in productById.product_photo_and_review"
+  <div class="container">
+      <div class="row">
+        <div class="col l6 m6 s12">
+            <div style="height:300px;">
+              <img :src="`/static/photos/${productById.image}`" alt="" style="height:300px;width:100%;border:1px solid gray" />
+            </div>
+             <div v-for="(image,index) in productById.product_photo_and_review"
              :key="index"
              @mouseover="mouseOver(image.photos,productById)"
             
-              class="otherpic" style="border: 1px solid #ddd;">
-                <img   :src="`/static/photos/${image.photos}`" alt="" style="background-color:blue" />
-          </div> 
-      </div>
-    
+              class="col l3 m3 s3 otherpic" style="border: 1px solid #ddd;">
+                <img   :src="`/static/photos/${image.photos}`" alt="" style="background-color:blue;width:100%" />
+          </div>
+        </div>
+        <div class="col l6 m6 s12">
+          <div style="background-color:gray">
 
-
-
-       <div class="col-sm-6 picture">
-         <!-- <div class="mainpic" style="width:100%">
-            <img :src="`/static/photos/${productById.image}`" alt="" style="background-color:blue" />
-         </div> -->
-         <div class="relative" >
-          <!-- <div v-for="(image,index) in productById.product_photo_and_review"
+            <!-- <div v-for="(image,index) in productById.product_photo_and_review"
              :key="index"
              @mouseover="mouseOver(image.photos,productById)"
             
-              class="otherpic" style="border: 1px solid #ddd;">
-                <img   :src="`/static/photos/${image.photos}`" alt="" style="background-color:blue" />
+              class="col l3 m3 s3 otherpic" style="border: 1px solid #ddd;">
+                <img   :src="`/static/photos/${image.photos}`" alt="" style="background-color:blue;width:100%" />
           </div>  -->
-         </div>
+          <div class="col l12 description" style="margin:auto;width:100%" >
               
-        </div> 
-        <div class="col-sm-6" style="border: 1px solid #dae2ee;height:350px">
-              <div class="description" style="margin:auto;width:100%" >
-                <p>{{productById.description}}</p>
-              </div>
-              <div class="price" style="margin:auto;width:100%" >
-                <p>Price For You:{{productById.price}} </p>
-              </div>
-
-               <div class="discound" style="margin:auto;width:100%" >
-                <p>Discount For You:{{productById.discount}} </p>
-              </div>
-              <div class="cart">
-                <button class="btn btn-primary" :disabled="check"   @click="addToCArt({id:productById.id,name:productById.name,price:productById.price,image:productById.image,quant:1})">Cart it now</button>
-              </div>
-              <div class="phoneContact" style="margin:auto;width:100%">
-                  For Order by phone please contact :01111222
-              </div>
-              <div class="payment">
-                  Payment: <img src="/static/photos/payment-icons.png" alt="">
-              </div>
-         </div>
-            
-     </div>
-     <div style="margin-bottom:100px">
-
-      
-   <!-- {{check}} -->
-   <!-- {{getCart}} -->
-
-    
-     </div>
-  </div>    
- 
+                  <div class="card grey darken-1 white-text" style="width:100%;text-align:center;height:130px;margin-left: -10px;">
+                      <span class="card-title">Description</span>
+                          <hr>
+                        <div class="card-content white-text" style="padding: 0 !important;">
+                          <p>{{productById.description}}</p>
+                        </div>
        
-   
-  
-      
-           
+                      </div>
+                  </div>
+
+                  <div class="col l12 description" style="margin:auto;width:100%" >
+                
+                      <div class="card blue-grey darken-1" style="width:100%;text-align:center;margin-left: -10px;" >
+                          <div class="card-title" style="color:yellow">Price:{{productById.price}}</div>
+         
+                               <div class="card-content white-text" style="padding: 0 !important;">
+                                     <p>Discount: {{productById.discount}}%</p>
+                                  </div>
+                                   <div class="card-action">
+                                   <a class="btn-large pulse"  :disabled="check"   @click="addToCArt({id:productById.id,name:productById.name,price:productById.price,image:productById.image,quant:1})" >Add to Cart</a>
+                                    </div>
+                                 </div>
+                   </div>
+
+                  <div class="col l12 description" style="margin:auto;width:100%" >
+                
+                      <div class="card blue-grey darken-1" style="width:100%;text-align:center;margin-left: -10px;" >
+                          <div class="card-title" style="color:yellow">Order by phone</div>
+         
+                               <div class="card-content white-text" style="padding: 0 !important;">
+                                     <h4>01737030457</h4>
+                                  </div>
+                                   <div class="card-action">
+                                     <div class="card-title" style="color:yellow;padding-bottom: 8px;margin-top: -14px;">Payment</div>
+                                     <img src="/static/photos/payment-icons.png" alt="">
+                                    </div>
+                                 </div>
+                   </div>
+
+               </div>
+             
+                </div>
+
+        </div>
+      </div>  
 
         
 </template>
@@ -91,59 +79,46 @@ import { mapGetters } from "vuex";
 import {
   GET_PRODUCT_BY_ID,
   ADD_TO_CART,
-  CHECK_CART_PRODUCT,
- 
+  CHECK_CART_PRODUCT
 } from "../../store/actions.type";
 
-import {
-  CHECK_PRODUCT_ON_CART,
- 
-} from "../../store/mutations.type";
+import { CHECK_PRODUCT_ON_CART } from "../../store/mutations.type";
 
 export default {
-  watch:{
-   
-  },
+  watch: {},
   computed: {
     // productById() {
-     
+
     //   return this.$store.getters.productById;
     // },
-    ...mapGetters([
-       'productById',
-       'getCart'
-        
-      ]),check:function(){
-        console.log("inside");
-        var productId = this.productById.id;
-        var cart =  this.getCart
-        var temp=false;
-        cart.map(obj=>{
+    ...mapGetters(["productById", "getCart"]),
+    check: function() {
+      console.log("inside");
+      var productId = this.productById.id;
+      var cart = this.getCart;
+      var temp = false;
+      cart.map(obj => {
+        if (obj.id === productId) {
+          console.log("got it");
+          temp = true;
+        }
+      });
 
-          if(obj.id===productId){
-            console.log("got it")
-            temp = true;
-          }
-        })
-
-        return temp;
-        // console.log(this.productById)
-      }
+      return temp;
+      // console.log(this.productById)
+    }
     // check(){
-      
+
     //   if(this.productById.id!== 'undefined'){
-        
+
     //   var temp = this.$store.commit(CHECK_PRODUCT_ON_CART, this.productById.id);
-     
+
     //   }
     // }
-    
   },
-  
+
   data() {
-    return {
-    
-    };
+    return {};
   },
   methods: {
     mouseOver: (img, product) => {
@@ -151,8 +126,7 @@ export default {
     },
     addToCArt: function(product) {
       return this.$store.dispatch(ADD_TO_CART, product);
-    },
-    
+    }
   }
 };
 </script>
@@ -180,6 +154,7 @@ export default {
   vertical-align: middle;
 }
 .otherpic img {
-  height: 50px;
+  height: 70px;
+  width: 100%;
 }
 </style>
