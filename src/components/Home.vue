@@ -1,5 +1,57 @@
 <template>
-  <div class="home-page">
+
+
+<div class="containner">
+    <div class="row">
+      <div class="col l4 m6 s12" style="background-color:gray">
+        <div class="carousel" id="first">
+          <h3>Popular product</h3>
+
+      <router-link  :to="{name: 'home'}" class="carousel-item" > 
+        <img src="../assets/0084030.jpg" alt="Los Angeles">
+         </router-link>
+         <router-link  :to="{name: 'home'}" class="carousel-item" > 
+        <img src="../assets/0084030.jpg" alt="Los Angeles">
+         </router-link>
+         <router-link  :to="{name: 'home'}" class="carousel-item" > 
+        <img src="../assets/0084030.jpg" alt="Los Angeles">
+         </router-link>
+         <router-link  :to="{name: 'home'}" class="carousel-item" > 
+        <img src="../assets/0084030.jpg" alt="Los Angeles">
+         </router-link>
+
+    
+        </div>
+      </div>
+
+      <div class="col l8 m6 s12">
+       
+           <div class="carousel carousel-slider" id="second">
+          <h3>Popular product</h3>
+
+      <router-link  :to="{name: 'home'}" class="carousel-item" > 
+        <img src="../assets/0084030.jpg" alt="Los Angeles">
+         </router-link>
+         <router-link  :to="{name: 'home'}" class="carousel-item" > 
+        <img src="../assets/0084030.jpg" alt="Los Angeles">
+         </router-link>
+         <router-link  :to="{name: 'home'}" class="carousel-item" > 
+        <img src="../assets/0084030.jpg" alt="Los Angeles">
+         </router-link>
+         <router-link  :to="{name: 'home'}" class="carousel-item" > 
+        <img src="../assets/0084030.jpg" alt="Los Angeles">
+         </router-link>
+
+    
+        </div>
+         
+      </div>
+    </div>
+   
+<router-view></router-view>
+</div>
+  
+  <!-- <div class="home-page">
     <div class="banner">
       
 
@@ -16,15 +68,15 @@
 
      <div class="col-sm-8">
        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
+    
+    <! <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    </ol> --> 
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <!-- <div class="carousel-inner">
       <div class="item active">
         <router-link  :to="{name: 'home'}" > 
         <img src="../assets/0081286.jpg" alt="Los Angeles" style="width:100%;">
@@ -42,10 +94,10 @@
         <img src="../assets/0084030.jpg" alt="Los Angeles" style="width:100%;">
          </router-link>
       </div>
-    </div>
+    </div> -->
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
@@ -55,14 +107,14 @@
     </a>
   </div>
     </div>
-  </div>
+  </div> -->
  
 
 
 
 
       
-    </div>
+    <!-- </div>
     <div class="container page">
       <div class="row">
         <div class="col-md-9">
@@ -84,7 +136,7 @@
                   active-class="active">
                   Global Feed
                 </router-link>
-              </li>
+              </li> -->
               <!-- <li class="nav-item" v-if="tag">
                 <router-link
                   :to="{name: 'home-tag', params: {tag}}"
@@ -94,9 +146,9 @@
                   {{ tag }}
                 </router-link>
               </li> -->
-            </ul>
-          </div>
-          <router-view></router-view>
+            <!-- </ul>
+          </div> -->
+          
 
           <!-- <div class="container">
           <div class="row">
@@ -111,7 +163,7 @@
 
           </div>
           </div> -->
-        <div class="container">
+        <!-- <div class="container">
           <div class="row">
 
           <product-preview 
@@ -128,17 +180,17 @@
         <div class="col-md-3">
           <div class="sidebar">
             <p>Popular Tags</p>
-            <div class="tag-list">
+            <div class="tag-list"> -->
               <!-- <RwvTag
                 v-for="(tag, index) in tags"
                 :name="tag"
                 :key="index">
               </RwvTag> -->
-            </div>
+            <!-- </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 </template>
 
@@ -192,20 +244,17 @@ export default {
     ProductPreview: ProductPreview
   },
   mounted() {
-    // this.$store.dispatch(FETCH_TAGS)
-    $(".carousel").carousel({
-      interval: 3000
-    });
+    
+   
+    $('#second').carousel({
+    full_width: true
+  });
+   $('#first').carousel();
+      
+ 
+  
   }
-  // computed: {
-  //   ...mapGetters([
-  //     'isAuthenticated',
-  //     'tags'
-  //   ]),
-  //   tag () {
-  //     return this.$route.params.tag
-  //   }
-  // }
+ 
 };
 </script>
 
