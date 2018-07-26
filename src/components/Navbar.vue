@@ -1,5 +1,131 @@
 <template>
- <div id="middle-namvbar">
+
+
+ <div class="container manue hide-on-small-only">
+        <div class="row">
+      
+           <div class="col l1 m4 s12 content">
+
+              <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Western' }">
+             <img src="../assets/western_wear-min.png" alt="Western" class="circle responsive-img">
+             </router-link>
+          <h6>Western</h6>
+      </div>
+      
+ 
+           <div class="col l1 m4 s12 content" >
+
+          <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Watches' }">
+             <img src="../assets/Watches.png" alt="Watches" class="circle responsive-img">
+             </router-link>
+          <h6>Watches</h6>
+
+      </div>
+
+      <div class="col l1 m4 s12 content">
+
+         <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Tshirt' }">
+             <img src="../assets/T SHIRT.png" alt="Tshirt" class="circle responsive-img">
+             </router-link>
+          <h6>Tshirt</h6>
+
+      </div>
+
+      
+      
+           <div class="col l1 m4 s12 content">
+
+          <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Tops' }">
+             <img src="../assets/tops.png" alt="Tops" class="circle responsive-img">
+             </router-link>
+          <h6>Tops</h6>
+
+        </div>
+
+       <div class="col l1 m4 s12 content">
+
+          <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Footwear' }">
+             <img src="../assets/Stilettoes_n_Heels_01.png" alt="Footwear" class="circle responsive-img">
+             </router-link>
+          <h6>Footwear</h6>
+
+      </div>
+
+    
+
+           <div class="col l1 m4 s12 content">
+
+          <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Kurtis' }">
+             <img src="../assets/kurta_kurti.png" alt="Kurtis" class="circle responsive-img">
+             </router-link>
+          <h6>Kurtis</h6>
+
+      </div>
+
+
+           <div class="col l1 m4 s12 content">
+
+         <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Bags' }">
+             <img src="../assets/bags-min.png" alt="Bags" class="circle responsive-img">
+             </router-link>
+          <h6>Bags</h6>
+
+      </div>
+    
+
+           <div class="col l1 m4 s12 content">
+
+          <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Sarres' }">
+             <img src="../assets/sarees.png" alt="Sarres" class="circle responsive-img" >
+             </router-link>
+          <h6>Sarres</h6>
+      </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <div id="middle-namvbar">
      
   <nav class="navbar navbar-light">
     
@@ -101,67 +227,24 @@
       </ul>
     
   </nav>
-   </div>
+   </div> -->
 </template>
-<script>
-  import { mapGetters } from 'vuex'
-  export default {
-
-    data(){
-      return{
-       
-      }
-    },
-    computed: {
-    
-    }
-  }
-</script>
 
 <style  scoped>
-#middle-namvbar{
-    background-color :lightgreen;
-    margin: -11px 0px -14px 0px;
-    
-}
-.navbar .navbar-light{
-        padding-top: 22px;
-         margin-top: -3%;
-}
-.nav-item .nav-link {
-    display: block;
-    text-align: center;
-    background-color: #fbfbfb;
-    border: thin solid #e0e0e0;
-    padding: 15px 20px;
-    height: 100px;
-    width: 100px
-}
-/* .container{
-    margin:
-} */
-
-.pull-xs-right .nav-item{
-    padding-left: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 5px;
+  .manue{
+    margin-top: 15px;
+  }
+  .manue .row div{
+  margin-top: 10px;
+  width: 88px;
 }
 
-.picDiv{
-    height: 82px;
-    width: 72px;
+.content{
+  text-align: center;
 }
-.ptext{
-    font-weight: bold;
-    font-family: sans-serif;
-   
+.content img{
+  padding: 5px;
 }
-img{
-    height: 50px;
-    width: 60px;
-}
-
 </style>
 
 

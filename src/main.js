@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import ApiService from './common/api.service'
+import Materials from "vue-materials"
 import {  CHECK_AUTH } from './store/actions.type';
 
 
@@ -12,6 +13,7 @@ import VueAxios from 'vue-axios'
 
 // export const bus = new Vue();
 
+Vue.use(Materials)
 Vue.use(VueAxios, axios)
 // Vue.use(vueRouter);
 ApiService.init();

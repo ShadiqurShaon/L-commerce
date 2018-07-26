@@ -210,9 +210,9 @@ export default {
 </script>
 
 <style scoped>
-.carousel-inner > .item > img {
+/* .carousel-inner > .item > img {
   height: 400px;
-}
+} */
 /* .carousel-inner > .item > a > img {
       width: 70%;
       margin: auto;
