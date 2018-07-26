@@ -1,13 +1,13 @@
 <template>   
 
- <router-link  :to="{name: 'product-view', params: {'slug': this.$vnode.key}}" @click.native="getProduct(product.id)" > 
+ <router-link class="produvt-view" active-class="active" :to="{name: 'product-view', params: {'slug': this.$vnode.key}}" @click.native="getProduct(product.id)" > 
       <div class="card">
         <div class="card-image">
           <img :src="`/static/photos/${product.image}`" alt="Los Angeles"> 
         </div>
         <div class="card-content">
-          <div class="card-title">
-            TK:{{product.price}}
+          <div class="card-title price">
+            TK:- {{product.price}}
           </div>
           <span class="card-title"> {{product.name}}</span>
           <p>I am a very simple card.</p>
@@ -80,99 +80,19 @@ export default {
 };
 </script>
  <style scoped>
-/* .productIteam {
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-top: 5px;
-  padding: 5px;
-  border: 2px solid;
-  word-wrap: break-word;
-  height: 350px;
+.card .card-image img {
+  height: 200px!important;
 }
-.picture{
-width:100%;
-height:200px;
-
+.card{
+  text-align: center;
 }
-.picture img{
-
-width:100%;
-height:200px;
+.produvt-view{
+  color: #212121!important;
+  background-color: #efefef;
+  font-family: inherit;
 }
-
-
-.product-title{
-   margin-top: 5px;
-    height: 40px;
-    overflow: hidden;
-    padding: 0 15px;
-    font-size: 16px;
-    font-weight: normal;
-    color: #333;
-    text-align: center;
-    
-}
-.details .product-title{
-  display: block; 
- 
-}
-.add-info .prices{
-  text-align:center;
-}
-.add-info .prices .Customeprice{
-  
+.price{
   font-weight: bold;
- font-size: 24px;
-    color: #00a1b1;
-    padding: 0 4px;
-    vertical-align: middle;
+  color:#405d9b;
 }
-.preview{
- text-decoration: none!important; 
-}
-.buttons-lower{
-  margin: 0px;
-  border: 0px;
-}
-.buttons-lower .buttons-bilow{
-    display: block;
-    color:grey;
-    width: 100%;
-    height: 43px;
-    border: none;
-    padding: 0 0 0 25px;
-    background-color: rgb(195, 250, 250);
-    font-size: 15 px;
-    font-weight: bold;
-     text-transform: uppercase;
-    transition: all .2s ease;
-}
-
-.buttons-lower .buttons-bilow:hover{
-   
-    background-color: rgb(165, 33, 33);
-    color:white;
-}
-.buttons-lower .buttons-bilow p{
-      padding-top: 8px;
-    padding-right: 25px;
-}  */
-/* .buttons-lower .buttons-bilow .insideButton{
-    display: inline-block;
-    width: 100%;
-    position: relative;
-    height: 18px;
-    background-color: #fff;
-    padding: 0 0 0 25px;
-    font-size: 13px;
-    font-weight: bold;
-    color: #777;
-    text-transform: uppercase;
-    transition: all .2s ease;
-}
-
-.buttons-lower .buttons-bilow .insideButton:hover{
-  background-color: rgb(165, 33, 33);
-    color:white;
-} */
 </style>

@@ -3,14 +3,14 @@
     <nav class="nav-wraper #009688 teal ">
         <div class="container">
             <!-- <a class="brand-logo" href="#"> WE-SHE</a> -->
-            <router-link class="brand-logo"
+            <router-link class="brand-logo right"
              :to="{ name: 'home' }">
              WE-SHE
           </router-link>
 
-            <a href="#" class="sidenav-tregger hide-on-large-only " data-activates="slide-out">
+            <!-- <a href="#" class="sidenav-tregger hide-on-large-only " data-activates="slide-out">
                 <i class="material-icons">menu</i>
-            </a>
+            </a> -->
         <ul v-if="!isAuthenticated" class="right hide-on-med-and-down">
             <li>
                <router-link class="nav-link"
@@ -65,6 +65,12 @@
           </router-link>
           </li>
         </ul>
+        <div style=" margin-right: 670px;">
+             <a href="#" class="sidenav-tregger " data-activates="slide-out" >
+                <i class="material-icons" style="margin-right: 681px;">menu</i>
+            </a>
+        </div>
+       
         </div>    
     </nav>
 
@@ -177,5 +183,8 @@ export default {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 15px;
   /* font-weight: bold; */
+}
+nav .brand-logo {
+  padding-right: 15px;
 }
 </style>

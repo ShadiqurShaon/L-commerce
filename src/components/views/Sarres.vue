@@ -1,11 +1,13 @@
 <template>
     <div class="container">
           <div class="row">
-            <product-preview 
-            v-for="(product,index) in getSarres"
-                :product="product"
-                :key="product.name.replace(/\s/g,'')+index">
-            </product-preview>
+            <div class="col l6" v-for="(product,index) in getSarres" 
+    :key="product.name.replace(/\s/g,'')+index"
+    >
+    <product-preview :product="product">
+          </product-preview>
+      
+    </div>
         </div>
   </div> 
 </template>

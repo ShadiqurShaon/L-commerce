@@ -50,7 +50,7 @@
    
 <div class="container">
   <div class="row">
-    <div class="col l6">
+    <!-- <div class="col l6">
 
       <router-link  :to="{name: 'home'}" > 
       <div class="card">
@@ -71,7 +71,64 @@
       </router-link>
 
     </div>
-    <div class="col l6"  v-for="(product,index) in Products" 
+    <div class="col l6">
+      <router-link  :to="{name: 'home'}" > 
+      <div class="card">
+        <div class="card-image">
+          <img src="../assets/0084030.jpg" alt="Los Angeles"> 
+        </div>
+        <div class="card-content">
+          <div class="card-title">
+            Price:
+          </div>
+          <span class="card-title">Shopping</span>
+          <p>I am a very simple card.</p>
+        </div>
+        <div class="card-action">
+          <a href="">Buy now</a>
+        </div>
+      </div>
+      </router-link>
+    </div>
+    <div class="col l6">
+      <router-link  :to="{name: 'home'}" > 
+      <div class="card">
+        <div class="card-image">
+          <img src="../assets/0084030.jpg" alt="Los Angeles"> 
+        </div>
+        <div class="card-content">
+          <div class="card-title">
+            Price:
+          </div>
+          <span class="card-title">Shopping</span>
+          <p>I am a very simple card.</p>
+        </div>
+        <div class="card-action">
+          <a href="">Buy now</a>
+        </div>
+      </div>
+      </router-link>
+    </div>
+    <div class="col l6">
+      <router-link  :to="{name: 'home'}" > 
+      <div class="card">
+        <div class="card-image">
+          <img src="../assets/0084030.jpg" alt="Los Angeles"> 
+        </div>
+        <div class="card-content">
+          <div class="card-title">
+            Price:
+          </div>
+          <span class="card-title">Shopping</span>
+          <p>I am a very simple card.</p>
+        </div>
+        <div class="card-action">
+          <a href="">Buy now</a>
+        </div>
+      </div>
+      </router-link>
+    </div> -->
+    <div class="col l6" v-for="(product,index) in Products" 
     :key="product.name.replace(/\s/g,'')+index"
     >
     <product-preview :product="product">
@@ -243,31 +300,31 @@ export default {
         {
           id: 3,
           image: "0081286.jpg",
-          name: "CHECK PRINT SHIRT",
+          name: "CHECK PRINT ",
           price: 110
         },
         {
           id: 2,
           image: "0081286.jpg",
-          name: "GLORIA HIGH LOGO SNEAKER",
+          name: "GLORIA HIGH ",
           price: 91
         },
         {
           id: 1,
           image: "0081286.jpg",
-          name: "CATE RIGID BAG",
+          name: "CATE RIGID",
           price: 94.5
         },
         {
           id: 4,
           image: "0081286.jpg",
-          name: "GUESS CONNECT WATCH",
+          name: "GUESS CONNECT",
           price: 438.9
         },
         {
           id: 6,
           image: "0081286.jpg",
-          name: "'70s RETRO GLAM KEFIAH",
+          name: "'70s RETRO",
           price: 20
         }
       ]

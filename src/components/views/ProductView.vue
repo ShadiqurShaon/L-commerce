@@ -1,21 +1,46 @@
 <template>
 
+
+
   <div class="container" style="text-align:center">
   
-    <h1>Product Deatails of :{{productById.name}}</h1>
+    <h3>Product Deatails of :{{productById.name}}</h3>
+
+
    <div class="row" style="margin-top:30px">
-       <div class="col-sm-6 picture">
-         <div class="mainpic" style="width:100%">
+
+      <div class="col l6 s12">
+
+        <div  >
             <img :src="`/static/photos/${productById.image}`" alt="" style="background-color:blue" />
          </div>
-         <div class="relative" >
-          <div v-for="(image,index) in productById.product_photo_and_review"
+
+      </div>
+      <div class="col l6 s12">
+        <div v-for="(image,index) in productById.product_photo_and_review"
              :key="index"
              @mouseover="mouseOver(image.photos,productById)"
             
               class="otherpic" style="border: 1px solid #ddd;">
                 <img   :src="`/static/photos/${image.photos}`" alt="" style="background-color:blue" />
           </div> 
+      </div>
+    
+
+
+
+       <div class="col-sm-6 picture">
+         <!-- <div class="mainpic" style="width:100%">
+            <img :src="`/static/photos/${productById.image}`" alt="" style="background-color:blue" />
+         </div> -->
+         <div class="relative" >
+          <!-- <div v-for="(image,index) in productById.product_photo_and_review"
+             :key="index"
+             @mouseover="mouseOver(image.photos,productById)"
+            
+              class="otherpic" style="border: 1px solid #ddd;">
+                <img   :src="`/static/photos/${image.photos}`" alt="" style="background-color:blue" />
+          </div>  -->
          </div>
               
         </div> 
