@@ -44,7 +44,7 @@
                                      <p>Discount: {{productById.discount}}%</p>
                                   </div>
                                    <div class="card-action">
-                                   <a class="btn-large pulse"  :disabled="check"   @click="addToCArt({id:productById.id,name:productById.name,price:productById.price,image:productById.image,quant:1})" >Add to Cart</a>
+                                   <button class="btn-large pulse"  :disabled="check"   @click="addToCArt({id:productById.id,name:productById.name,price:productById.price,image:productById.image,quant:1})" >Add to Cart</button>
                                     </div>
                                  </div>
                    </div>

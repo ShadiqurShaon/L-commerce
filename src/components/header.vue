@@ -1,17 +1,17 @@
 <template>
 <div class="navbar-fixed">
     <nav class="nav-wraper #009688 teal ">
-        <div class="container">
+        <div class="containner">
             <!-- <a class="brand-logo" href="#"> WE-SHE</a> -->
-            <router-link class="brand-logo right"
+            <router-link class="brand-logo center"
              :to="{ name: 'home' }">
              WE-SHE
           </router-link>
-
+          
             <!-- <a href="#" class="sidenav-tregger hide-on-large-only " data-activates="slide-out">
                 <i class="material-icons">menu</i>
             </a> -->
-        <ul v-if="!isAuthenticated" class="right hide-on-med-and-down">
+        <ul v-if="!isAuthenticated" class="right" style="margin-right: 50px !important;">
             <li>
                <router-link class="nav-link"
             active-class="active"
@@ -19,7 +19,7 @@
             [{{totalProduct}}]Cart {{getTotal}}
           </router-link> 
           </li>
-            <li>
+            <li class=" hide-on-med-and-down">
                <router-link class="nav-link"
             active-class="active"
             exact
@@ -27,7 +27,7 @@
             Sign in
           </router-link>
             </li>
-            <li>
+            <li class=" hide-on-med-and-down">
               <router-link
             class="nav-link"
             active-class="active"
@@ -37,15 +37,15 @@
           </router-link>
             </li>
         </ul>
-        <ul v-else class="right hide-on-med-and-down">
-          <li>
+        <ul v-else class="right" style="margin-right: 50px !important;">
+          <li class="hide-on-med-and-down">
             <router-link class="nav-link"
             active-class="active"
             :to="{ name: 'cart' }">
             [{{totalProduct}}]Cart {{getTotal}}
           </router-link>
           </li>
-          <li>
+          <li class="hide-on-med-and-down">
             <a href="#" @click="logout" class="nav-link" >Log out</a>
           </li>
           <li v-if="currentUser.name">
@@ -56,7 +56,7 @@
             {{ currentUser.name }}
           </router-link>
           </li>
-          <li>
+          <li class="hide-on-med-and-down">
              <router-link class="nav-link"
             active-class="active"
             exact
@@ -65,7 +65,7 @@
           </router-link>
           </li>
         </ul>
-        <div style=" margin-right: 670px;">
+        <div style=" margin-right: 670px; margin-left:50px;">
              <a href="#" class="sidenav-tregger " data-activates="slide-out" >
                 <i class="material-icons" style="margin-right: 681px;">menu</i>
             </a>
