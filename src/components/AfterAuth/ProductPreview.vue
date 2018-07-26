@@ -1,10 +1,44 @@
 <template>   
-<router-link :to="{name: 'product-view', params: {'slug': this.$vnode.key}}" @click.native="getProduct(product.id)" class="col-sm-4 preview" >     
+
+ <router-link  :to="{name: 'product-view', params: {'slug': this.$vnode.key}}" @click.native="getProduct(product.id)" > 
+      <div class="card">
+        <div class="card-image">
+          <img :src="`/static/photos/${product.image}`" alt="Los Angeles"> 
+        </div>
+        <div class="card-content">
+          <div class="card-title">
+            TK:{{product.price}}
+          </div>
+          <span class="card-title"> {{product.name}}</span>
+          <p>I am a very simple card.</p>
+        </div>
+        <div class="card-action">
+          <a href="">Buy now</a>
+        </div>
+      </div>
+      </router-link>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <router-link :to="{name: 'product-view', params: {'slug': this.$vnode.key}}" @click.native="getProduct(product.id)" class="col-sm-4 preview" >     
           
             <div class="productIteam">
                 <div class="picture" >
-                  <!-- <img :src="require(`../../assets/${product.image}`)" alt="img not found"> -->
-                 <img :src="`/static/photos/${product.image}`" alt="" />
+                  <!<img :src="require(`../../assets/${product.image}`)" alt="img not found"> -->
+                 <!-- <img :src="`/static/photos/${product.image}`" alt="" />
                 </div>
                 <div class="details">
                   <h2 class="product-title"> {{product.name}}</h2>
@@ -13,18 +47,18 @@
                        <span class="Customeprice">Tk-{{product.price}}</span> 
                     </div>
                     <div class="buttons-lower">
-                        <button type="button" class="buttons-bilow">
+                        <button type="button" class="buttons-bilow"> -->
                             <!-- <span class="insideButton">buy now</span> -->
-                            <p>BUY NOW</p>
+                            <!-- <p>BUY NOW</p>
                         </button>
                     </div>
                   </div>
 
                 </div>
             
-            </div>
+            </div> -->
            
-            </router-link>
+            <!-- </router-link>  -->
    </template>
 <script>
 import { GET_PRODUCT_BY_ID } from "../../store/actions.type";
@@ -45,9 +79,8 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.productIteam {
+ <style scoped>
+/* .productIteam {
   margin-left: -10px;
   margin-right: -10px;
   margin-top: 5px;
@@ -123,7 +156,7 @@ height:200px;
 .buttons-lower .buttons-bilow p{
       padding-top: 8px;
     padding-right: 25px;
-} 
+}  */
 /* .buttons-lower .buttons-bilow .insideButton{
     display: inline-block;
     width: 100%;

@@ -48,7 +48,38 @@
       </div>
     </div>
    
-<router-view></router-view>
+<div class="container">
+  <div class="row">
+    <div class="col l6">
+
+      <router-link  :to="{name: 'home'}" > 
+      <div class="card">
+        <div class="card-image">
+          <img src="../assets/0084030.jpg" alt="Los Angeles"> 
+        </div>
+        <div class="card-content">
+          <div class="card-title">
+            Price:
+          </div>
+          <span class="card-title">Shopping</span>
+          <p>I am a very simple card.</p>
+        </div>
+        <div class="card-action">
+          <a href="">Buy now</a>
+        </div>
+      </div>
+      </router-link>
+
+    </div>
+    <div class="col l6"  v-for="(product,index) in Products" 
+    :key="product.name.replace(/\s/g,'')+index"
+    >
+    <product-preview :product="product">
+          </product-preview>
+      
+    </div>
+  </div>
+</div>
 </div>
   
   <!-- <div class="home-page">
