@@ -24,9 +24,9 @@
 <div class="container" v-if="show===false" style=" text-align:center;color:red">
   <h1>Your cart is empty</h1>
 </div>
-<div class="container" v-if="getCart.length < 1?show=false:show=true" v-show="show">
+<div  v-if="getCart.length < 1?show=false:show=true" v-show="show" style="margin-top:30px">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col l6" style="text-align:left">
      <router-link
                   :to="{name: 'home'}"
                   exact
@@ -35,7 +35,7 @@
                   Continue Shoping
                 </router-link>
     </div>
-    <div class="col-sm-6">
+    <div class="col l6" style="text-align:right">
      <router-link
                   :to="{name: '/continue-shopping',params:{cart: getCart}}" 
                   exact

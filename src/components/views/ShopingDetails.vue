@@ -1,10 +1,11 @@
 <template>
-    <div class="container">
+    <div class="">
         <div class="row">
          <form v-on:submit.prevent="onSubmit">
-             <div class="col-sm-5 dalivery" style="border:1px solid gray">
-                 <h3>Delivery Indo</h3>
+             <div class="col l5 dalivery" style="border:1px solid gray">
+                 <h3>Delivery Info</h3>
                  <hr>
+                 
             <fieldset class="form-group">
                 <label>Name</label>
               <input class="form-control form-control-lg" type="text" v-model="dalivery.name" placeholder="Name">
@@ -47,37 +48,37 @@
             </fieldset>
 
             </div>
-            <div class="col-sm-4">
+            <div class="col l4">
                 <div class="payment-method" style="border:1px solid gray">
                     <h3>Payment Method</h3>
                         <hr>
                     <div class="radio align" style="display:block ">
-                         <label><input class="side-side" type="radio"  v-model="dalivery.payment" value="bKash"> <img class="side-side" style="width:40px;height:40px;" :src="`/static/photos/bikash.jpg`" alt=""> <span>bKash</span></label>
+                         <div><input class="side-side" type="radio"  v-model="dalivery.payment" value="bKash"> <img class="side-img" style="width:40px;height:40px;" :src="`/static/photos/bikash.jpg`" alt=""> <span>bKash</span></div>
                     </div>
                     <div class="radio align" style="display:block">
-                         <label><input class="side-side" type="radio"  v-model="dalivery.payment" value="InstantPay"> <img class="side-side" style="width:40px;height:40px;" :src="`/static/photos/ipay.jpg`" alt=""> <span>InstantPay</span></label>
+                         <div><input class="side-side" type="radio"  v-model="dalivery.payment" value="InstantPay"> <img class="side-img" style="width:40px;height:40px;" :src="`/static/photos/ipay.jpg`" alt=""> <span>InstantPay</span></div>
                     </div>
                     <div class="radio align" style="display:block">
-                         <label><input class="side-side" type="radio"  v-model="dalivery.payment" value="City_Bank"> <img class="side-side" style="width:40px;height:40px;" :src="`/static/photos/cityBank.jpg`" alt=""> <span>City Bank</span></label>
+                         <div><input class="side-side" type="radio"  v-model="dalivery.payment" value="City_Bank"> <img class="side-img" style="width:40px;height:40px;" :src="`/static/photos/cityBank.jpg`" alt=""> <span>City Bank</span></div>
                     </div>
                     <div class="radio align" style="display:block">
-                         <label><input class="side-side" type="radio" v-model="dalivery.payment" value="EasyPayBd"> <img class="side-side" style="width:40px;height:40px;" :src="`/static/photos/easyPayment.jpg`" alt=""> <span>EasyPayBd</span></label>
+                         <div><input class="side-side" type="radio" v-model="dalivery.payment" value="EasyPayBd"> <img class="side-img" style="width:40px;height:40px;" :src="`/static/photos/easyPayment.jpg`" alt=""> <span>EasyPayBd</span></div>
                     </div>
                     <div class="radio align" style="display:block">
-                         <label><input class="side-side" type="radio" v-model="dalivery.payment" value="EBL_SKY"> <img class="side-side" style="width:40px;height:40px;" :src="`/static/photos/eblsky.jpg`" alt=""> <span>EBL SKY </span></label>
+                         <div><input class="side-side" type="radio" v-model="dalivery.payment" value="EBL_SKY"> <img class="side-img" style="width:40px;height:40px;" :src="`/static/photos/eblsky.jpg`" alt=""> <span>EBL SKY </span></div>
                     </div>
                     <div class="radio align" style="display:block">
-                         <label><input class="side-side" type="radio" v-model="dalivery.payment" value="Cash_On_Delivery"> <img class="side-side" style="width:40px;height:40px;" :src="`/static/photos/cashOnDelivery.jpg`" alt=""> <span>Cash On Delivery</span></label>
+                         <div><input class="side-side" type="radio" v-model="dalivery.payment" value="Cash_On_Delivery"> <img class="side-img" style="width:40px;height:40px;" :src="`/static/photos/cashOnDelivery.jpg`" alt=""> <span>Cash On Delivery</span></div>
                     </div>
 
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col l3">
                 <fieldset class="form-group">
               <input class="form-control form-control-lg" type="text" v-model="dalivery.referal" placeholder="Referal number">
             </fieldset>
             </div>
-            <div class="col-sm-6" style="border:1px solid gray;margin:10px;">
+            <div class="col l6" style="border:1px solid gray;margin:10px;">
     
 
 
@@ -129,22 +130,47 @@ export default {
 .payment-method h3 {
   text-align: center;
 }
-.align {
+/* .align {
   margin-left: 10px;
-}
+} */
+/* .align .side-side{
+  margin-bottom: 10px
+} */
+/* .align .side-img{
+  margin-top: 10px;
+} */
+/* label img{
+  margin-top: 10px;
+} */
 
-.radio label input {
+
+.radio div input {
   left: 0;
-  margin-top: 15px;
-  margin-left: 0;
+  margin-top: 5px!important;
+  margin-left: 10px;
+  margin-right: 10px;
+  opacity: 2 !important;
+  position: initial!important;
+  margin-bottom: 25px;
 }
-.radio img {
+.radio div img {
   width: 45px;
   height: 38px;
   margin-right: 8px;
-  margin-bottom: 3px;
+  margin-bottom: -14px;
 }
 .dalivery h3 {
   text-align: center;
 }
+
+.form-group{
+  border: none;
+  color: black;
+}
+
+.form-group label{
+  color: #405d9b;
+  font-size: 20px;
+}
+
 </style>
