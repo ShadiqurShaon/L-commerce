@@ -2,7 +2,7 @@
     <div class="">
         <div class="row">
          <form v-on:submit.prevent="onSubmit">
-             <div class="col l5 dalivery" style="border:1px solid gray">
+             <div class="col l8 dalivery" style="border:1px solid gray">
                  <h3>Delivery Info</h3>
                  <hr>
                  
@@ -73,7 +73,7 @@
 
                 </div>
             </div>
-            <div class="col l3">
+            <div class="col l2">
                 <fieldset class="form-group">
               <input class="form-control form-control-lg" type="text" v-model="dalivery.referal" placeholder="Referal number">
             </fieldset>
@@ -86,7 +86,7 @@
 
               
             </div>
-            <button class="btn btn-lg btn-primary pull-xs-right">
+            <button class="btn btn-lg btn-primary pull-xs-right" style="margin-left: 100px;">
              Confirm
             </button>
           </form>

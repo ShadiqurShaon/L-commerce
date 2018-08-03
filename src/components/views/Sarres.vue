@@ -1,7 +1,7 @@
 <template>
     <div class="container">
           <div class="row">
-            <div class="col l6" v-for="(product,index) in getSarres" 
+            <div class="col l6" v-for="(product,index) in getProducts" 
     :key="product.name.replace(/\s/g,'')+index"
     >
     <product-preview :product="product" :key="product.name.replace(/\s/g,'')+index">
@@ -14,23 +14,17 @@
 <script>
 import { mapGetters } from "vuex";
 import ProductPreview from "../AfterAuth/ProductPreview";
-import{SARRES} from '../../store/actions.type'
+import { PRODUCT_BY_CATEGORY } from "../../store/actions.type";
 
-
-     export default {
-   
-    components: {
+export default {
+  components: {
     ProductPreview: ProductPreview
-    },
-    mounted () {
-      this.$store.dispatch(SARRES)
-    },
-    computed: {
-      ...mapGetters([
-        'getSarres',
-      ]),
-  
-    }
-      
+  },
+  mounted() {
+    this.$store.dispatch(PRODUCT_BY_CATEGORY,'Sarres');
+  },
+  computed: {
+    ...mapGetters(["getProducts"])
   }
+};
 </script>

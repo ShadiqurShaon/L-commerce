@@ -10,7 +10,7 @@
             TK:- {{product.price}}
           </div>
           <span class="card-title"> {{product.name}}</span>
-          <p>I am a very simple card.</p>
+          <p>{{product.description}}</p>
         </div>
         <div class="card-action">
           <a href="">Buy now</a>

@@ -1,16 +1,16 @@
 import Apiservice from '../common/api.service';
-import{SARRES,GET_PRODUCT_BY_ID} from './actions.type'
-import{SET_SARRES,SET_PRODUCT_BY_ID} from './mutations.type'
+import{PRODUCT_BY_CATEGORY,GET_PRODUCT_BY_ID} from './actions.type'
+import{SET_PRODUCT,SET_PRODUCT_BY_ID} from './mutations.type'
 
 
 const state = {
-   sarres:[],
+   products:[],
    productById:{}
 }
 
 const getters = {
-    getSarres(state){
-        return state.sarres;
+    getProducts(state){
+        return state.products;
     },
     productById(state){
         return state.productById;
@@ -20,11 +20,11 @@ const getters = {
 
 const actions = {
 
-    [SARRES](context){
+    [PRODUCT_BY_CATEGORY](context,payload){
         return new Promise((resolve)=>{
-            Apiservice.get('product','Sarres')
+            Apiservice.get('product',payload)
             .then((value)=>{
-                context.commit(SET_SARRES,value.data)
+                context.commit(SET_PRODUCT,value.data)
                 
             }).catch((response) => {
                 console.log(response)
@@ -48,8 +48,8 @@ const actions = {
   
 }
 const mutations = {
-    [SET_SARRES](state,data){
-        state.sarres = data;
+    [SET_PRODUCT](state,data){
+        state.products = data;
     },
     [SET_PRODUCT_BY_ID](state ,data){
     

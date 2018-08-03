@@ -2,7 +2,7 @@
   <div class="auth-page">
     <div class="container page">
       <div class="row">
-        <div class="col-md-6 offset-md-3 col-xs-12">
+        <div class="col l6 offset m3 s12">
           <h1 class="text-xs-center">Sign in</h1>
           <p class="text-xs-center">
             <router-link :to="{ name: 'register' }">
@@ -17,6 +17,7 @@
           </ul>
           <form v-on:submit.prevent="onSubmit(email, password)">
             <fieldset class="form-group">
+              <label>Email</label>
               <input
                 class="form-control form-control-lg"
                 type="text"
@@ -24,6 +25,7 @@
                 placeholder="Email">
             </fieldset>
             <fieldset class="form-group">
+              <label>password</label>
               <input
                 class="form-control form-control-lg"
                 type="password"
@@ -75,3 +77,16 @@ export default {
   }
 };
 </script>
+
+
+<style scoped>
+.form-group{
+  border: none;
+  color: black;
+}
+
+.form-group label{
+  color: #405d9b;
+  font-size: 20px;
+}
+</style>
