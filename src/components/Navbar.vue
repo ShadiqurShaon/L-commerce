@@ -1,8 +1,99 @@
 <template>
 
-
- <div class="container manue hide-on-small-only">
+<div class="container manue hide-on-small-only">
         <div class="row">
+      
+           <div class="col l1 m4 s12 content">
+
+              <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Western' }">
+             <img :src="`/static/photos/western_wear-min.png`" alt="Western" class="circle responsive-img">
+             </router-link>
+          <h6>Western</h6>
+      </div>
+      
+ 
+           <div class="col l1 m4 s12 content" >
+
+          <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Watches' }">
+             <img  :src="`/static/photos/Watches.png`" alt="Watches" class="circle responsive-img">
+             </router-link>
+          <h6>Watches</h6>
+
+      </div>
+
+      <div class="col l1 m4 s12 content">
+
+         <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Tshirt' }">
+             <img  :src="`/static/photos/T SHIRT.png`" alt="Tshirt" class="circle responsive-img">
+             </router-link>
+          <h6>Tshirt</h6>
+
+      </div>
+
+      
+      
+           <div class="col l1 m4 s12 content">
+
+          <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Tops' }">
+             <img :src="`/static/photos/tops.png`" alt="Tops" class="circle responsive-img">
+             </router-link>
+          <h6>Tops</h6>
+
+        </div>
+
+       <div class="col l1 m4 s12 content">
+
+          <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Footwear' }">
+             <img :src="`/static/photos/Stilettoes_n_Heels_01.png`"  alt="Footwear" class="circle responsive-img">
+             </router-link>
+          <h6>Footwear</h6>
+
+      </div>
+
+    
+
+           <div class="col l1 m4 s12 content">
+
+          <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Kurtis' }">
+             <img :src="`/static/photos/kurta_kurti.png`"  alt="Kurtis" class="circle responsive-img">
+             </router-link>
+          <h6>Kurtis</h6>
+
+      </div>
+
+
+           <div class="col l1 m4 s12 content">
+
+         <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Bags' }">
+             <img :src="`/static/photos/bags-min.png`"  alt="Bags" class="circle responsive-img">
+             </router-link>
+          <h6>Bags</h6>
+
+      </div>
+    
+
+           <div class="col l1 m4 s12 content">
+
+          <router-link class="btn-floating btn-large #e3f2fd"
+              :to="{ name: 'Sarres' }">
+             <img :src="`/static/photos/sarees.png`"  alt="Sarres" class="circle responsive-img" >
+             </router-link>
+          <h6>Sarres</h6>
+      </div>
+
+    </div>
+    </div>
+
+
+ <!-- <div class="container manue hide-on-small-only"> -->
+        <!-- <div class="row">
       
            <div class="col l1 m4 s12 content">
 
@@ -91,7 +182,7 @@
 
     </div>
     </div>
-
+ -->
 
 
 

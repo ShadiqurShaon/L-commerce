@@ -8,16 +8,16 @@
           <p class="card-title">Popular Product</p>
 
       <router-link  :to="{name: 'home'}" class="carousel-item" > 
-        <img src="../assets/0084030.jpg" alt="Los Angeles">name
+        <img :src=" `/static/photos/0084030.jpg`"  alt="Los Angeles">name
          </router-link>
          <router-link  :to="{name: 'home'}" class="carousel-item" > 
-        <img src="../assets/0084030.jpg" alt="Los Angeles">
+        <img :src=" `/static/photos/0084030.jpg`" alt="Los Angeles">
          </router-link>
          <router-link  :to="{name: 'home'}" class="carousel-item" > 
-        <img src="../assets/0084030.jpg" alt="Los Angeles">
+        <img :src=" `/static/photos/0084030.jpg`" alt="Los Angeles">
          </router-link>
          <router-link  :to="{name: 'home'}" class="carousel-item" > 
-        <img src="../assets/0084030.jpg" alt="Los Angeles">
+        <img :src=" `/static/photos/0084030.jpg`" alt="Los Angeles">
          </router-link>
 
     
@@ -30,16 +30,16 @@
           
 
       <router-link  :to="{name: 'home'}" class="carousel-item" > 
-        <img src="../assets/0084030.jpg" alt="Los Angeles">
+        <img :src=" `/static/photos/0084030.jpg`" alt="Los Angeles">
          </router-link>
          <router-link  :to="{name: 'home'}" class="carousel-item" > 
-        <img src="../assets/0084030.jpg" alt="Los Angeles">
+        <img :src=" `/static/photos/0084030.jpg`" alt="Los Angeles">
          </router-link>
          <router-link  :to="{name: 'home'}" class="carousel-item" > 
-        <img src="../assets/0084030.jpg" alt="Los Angeles">
+        <img :src=" `/static/photos/0084030.jpg`" alt="Los Angeles">
          </router-link>
          <router-link  :to="{name: 'home'}" class="carousel-item" > 
-        <img src="../assets/0084030.jpg" alt="Los Angeles">
+        <img :src=" `/static/photos/0084030.jpg`" alt="Los Angeles">
          </router-link>
 
     

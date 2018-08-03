@@ -81,7 +81,60 @@
             <!-- <li class="collection-item"><a class="secondary-content" href="#"> <img src="../assets/bags-min.png" alt="Bags" class="circle responsive-img" style="background-color:red;width:50px;height:50px;margin:5px">Login</a></li> -->
     <!-- </ul> -->
 
-    <ul id="slide-out" class="side-nav">
+   <ul id="slide-out" class="side-nav">
+    <li class="card">
+        <router-link :to="{ name: 'Bags' }">
+             <img :src="`/static/photos/bags-min.png`"  alt="Bags" class="circle responsive-img"><span>Bags </span> 
+       </router-link>   
+    </li>
+
+     <li class="card">
+        <router-link :to="{ name: 'Western' }">
+             <img :src=" `/static/photos/western_wear-min.png`" alt="Western" class="circle responsive-img"><span>Western </span> 
+       </router-link>   
+    </li>
+
+     <li class="card">
+        <router-link :to="{ name: 'Watches' }">
+             <img :src=" `/static/photos/Watches.png`"  alt="Watches" class="circle responsive-img"><span>Watches </span> 
+       </router-link>   
+    </li>
+
+     <li class="card">
+        <router-link :to="{ name: 'Tshirt' }">
+             <img  :src=" `/static/photos/T SHIRT.png`"  alt="Tshirt" class="circle responsive-img"><span>Tshirt </span> 
+       </router-link>   
+    </li>
+
+     <li class="card">
+        <router-link :to="{ name: 'Tops' }">
+             <img :src=" `/static/photos/tops.png`"  alt="Tops" class="circle responsive-img"><span>Tops </span> 
+       </router-link>   
+    </li>
+
+     <li class="card">
+        <router-link :to="{ name: 'Footwear' }">
+             <img :src=" `/static/photos/Stilettoes_n_Heels_01.png`" alt="Footwear" class="circle responsive-img"><span>Footwear </span> 
+       </router-link>   
+    </li>
+
+     <li class="card">
+        <router-link :to="{ name: 'Kurtis' }">
+             <img :src=" `/static/photos/kurta_kurti.png`" alt="Kurtis" class="circle responsive-img"><span>Kurtis </span> 
+       </router-link>   
+    </li>
+
+     <li class="card">
+        <router-link :to="{ name: 'Sarres' }">
+             <img :src=" `/static/photos/sarees.png`"  alt="Sarres" class="circle responsive-img"><span>Sarres </span> 
+       </router-link>   
+    </li>
+
+    
+    
+  </ul>
+
+    <!-- <ul id="slide-out" class="side-nav">
     <li class="card">
         <router-link :to="{ name: 'Bags' }">
              <img src="../assets/bags-min.png" alt="Bags" class="circle responsive-img"><span>Bags </span> 
@@ -129,10 +182,7 @@
              <img src="../assets/sarees.png" alt="Sarres" class="circle responsive-img"><span>Sarres </span> 
        </router-link>   
     </li>
-
-    
-    
-  </ul>
+  </ul> -->
   <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
 </template>
